@@ -1,4 +1,5 @@
 import './App.css';
+import strings from './constants/strings';
 import Filters from './components/Filters';
 import IngredientInput from './components/IngredientInput';
 import RecipeDisplay from './components/RecipeDisplay';
@@ -6,7 +7,7 @@ import RecipeDisplay from './components/RecipeDisplay';
 function App() {
   return (
     <>
-      <h1>AI Recipe Generator</h1>
+      <h1>{strings.title}</h1>
       <IngredientInput />
       <Filters />
       <RecipeDisplay />

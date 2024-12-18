@@ -1,11 +1,9 @@
-import { useState } from 'react';
+import { FormEvent, useState } from 'react';
 
-// TODO: Add proper type
-const IngredientInput = ({ onSubmit }: any) => {
+const IngredientInput = ({ onSubmit }: IngredientInput) => {
   const [ingredients, setIngredients] = useState('');
 
-  // TODO: Add proper type
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     onSubmit(ingredients.split(',').map((item) => item.trim()));
   };

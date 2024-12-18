@@ -1,20 +1,21 @@
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
-// TODO: Add proper type
-const Filters = ({ onChange }: any) => {
-  const [filters, setFilters] = useState({
+const Filters = ({ onChange }: Filters) => {
+  const [filters, setFilters] = useState<RecipeFilters>({
     cuisine: '',
     dietary: '',
     time: ''
   });
 
-  // TODO: Add proper type
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFilters({ ...filters, [name]: value });
     onChange({ ...filters, [name]: value });
   };
 
+  // TODO: Add strings to str file
   return (
     <div>
       <label>Cuisine:</label>

@@ -5,8 +5,10 @@ const client = new OpenAI({
   dangerouslyAllowBrowser: true
 });
 
-// TODO: Add types for props
-export const fetchRecipe = async (ingredients: any, filters: any) => {
+export const fetchRecipe = async (
+  ingredients: string[],
+  filters: RecipeFilters
+): Promise<string | null> => {
   const chatCompletion: OpenAI.Chat.Completions.ChatCompletion =
     await client.chat.completions
       .create({

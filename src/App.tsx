@@ -6,11 +6,14 @@ import RecipeDisplay from './components/RecipeDisplay';
 import { fetchRecipe } from './api/fetchRecipe';
 
 const App = () => {
-  const [recipe, setRecipe] = useState('');
-  const [filters, setFilters] = useState({});
+  const [recipe, setRecipe] = useState<string>('');
+  const [filters, setFilters] = useState<RecipeFilters>({
+    cuisine: '',
+    dietary: '',
+    time: ''
+  });
 
-  // TODO: Add proper type
-  const handleGenerate = async (ingredients: any) => {
+  const handleGenerate = async (ingredients: string[]) => {
     const result = await fetchRecipe(ingredients, filters);
     setRecipe(result ?? '');
   };

@@ -1,0 +1,20 @@
+export const cuisineTypes: InputData[] = [
+  { value: 'italian', label: 'Italian' },
+  { value: 'mexican', label: 'Mexican' },
+  { value: 'chinese', label: 'Chinese' },
+  { value: 'indian', label: 'Indian' },
+  { value: 'japanese', label: 'Japanese' },
+  { value: 'thai', label: 'Thai' },
+  { value: 'french', label: 'French' },
+  { value: 'greek', label: 'Greek' },
+  { value: 'spanish', label: 'Spanish' },
+  { value: 'american', label: 'American' },
+  { value: 'mediterranean', label: 'Mediterranean' },
+  { value: 'korean', label: 'Korean' },
+  { value: 'vietnamese', label: 'Vietnamese' },
+  { value: 'caribbean', label: 'Caribbean' },
+  { value: 'middle-eastern', label: 'Middle Eastern' },
+  { value: 'african', label: 'African' },
+  { value: 'german', label: 'German' },
+  { value: 'brazilian', label: 'Brazilian' }
+];

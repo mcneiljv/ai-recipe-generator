@@ -1,3 +1,8 @@
+interface InputData {
+  value: string;
+  label: string;
+}
+
 interface Filters {
   onChange: (filters: RecipeFilters) => void;
 }

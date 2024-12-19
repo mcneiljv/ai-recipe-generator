@@ -1,4 +1,4 @@
-export const dietaryRestrictions = [
+export const dietaryRestrictions: InputData[] = [
   { value: 'gluten-free', label: 'Gluten-Free' },
   { value: 'lactose-free', label: 'Lactose-Free' },
   { value: 'low-sodium', label: 'Low-Sodium' },

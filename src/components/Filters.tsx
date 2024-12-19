@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { SelectChangeEvent, TextField } from '@mui/material';
+import { SelectChangeEvent } from '@mui/material';
 import Select from './common/Select';
+import Text from './common/Text';
 import strings from '../constants/strings';
 import { cuisineTypes, dietaryRestrictions } from '../constants/data';
 
@@ -17,8 +18,6 @@ const Filters = ({ onChange }: Filters) => {
     onChange({ ...filters, [name]: value });
   };
 
-  // TODO: Add strings to str file
-  // NOTE: Add food allergies
   return (
     <div>
       <Select
@@ -28,6 +27,7 @@ const Filters = ({ onChange }: Filters) => {
         label={strings.cuisine}
         labelId='cuisine-select-label'
         name='cuisine'
+        // @ts-ignore TODO: Fix type
         onChange={handleChange}
         value={filters.cuisine}
       />
@@ -38,20 +38,17 @@ const Filters = ({ onChange }: Filters) => {
         label={strings.dietaryRestrictions}
         labelId='dietary-select-label'
         name='dietary'
+        // @ts-ignore TODO: Fix type
         onChange={handleChange}
         value={filters.dietary}
       />
-      <TextField
+      {/* TODO:Add helper text that says minutes */}
+      <Text
         id='outlined-number'
         label='Max Cooking Time'
         name='time'
         // @ts-ignore TODO: Fix type
         onChange={handleChange}
-        slotProps={{
-          inputLabel: {
-            shrink: true
-          }
-        }}
         type='number'
         variant='filled'
       />

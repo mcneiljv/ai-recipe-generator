@@ -1,12 +1,12 @@
 import {
+  BaseSelectProps,
   FormControl,
   InputLabel,
   MenuItem,
-  Select as SelectMUI,
-  SelectProps
+  Select as SelectMUI
 } from '@mui/material';
 
-interface Select extends Omit<SelectProps<string>, 'children'> {
+interface Select extends BaseSelectProps {
   ariaLabel: string;
   data: InputData[];
   label: string;

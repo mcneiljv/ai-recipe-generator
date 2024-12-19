@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import strings from '../constants/strings';
-import { dietaryRestrictions } from '../constants/dietaryRestrictions';
-import Select from './common/Select';
 import { SelectChangeEvent } from '@mui/material';
+import Select from './common/Select';
+import strings from '../constants/strings';
+import { cuisineTypes, dietaryRestrictions } from '../constants/data';
 
 const Filters = ({ onChange }: Filters) => {
   const [filters, setFilters] = useState<RecipeFilters>({
@@ -26,6 +26,16 @@ const Filters = ({ onChange }: Filters) => {
         name='cuisine'
         onChange={handleChange}
         placeholder='e.g., Italian'
+      />
+      <Select
+        ariaLabel={strings.cuisine}
+        data={cuisineTypes}
+        id='cuisine-restriction-select'
+        label={strings.cuisine}
+        labelId='cuisine-select-label'
+        name='cuisine'
+        onChange={handleChange}
+        value={filters.cuisine}
       />
       <Select
         ariaLabel={strings.dietaryRestrictions}

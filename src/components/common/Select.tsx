@@ -22,7 +22,7 @@ const Select = ({
   value,
   ...rest
 }: Select) => (
-  <FormControl variant='standard' sx={{ m: 1, width: 300 }}>
+  <FormControl variant='filled' sx={{ m: 1, width: 300 }}>
     <InputLabel id={`${id}-label`}>{label}</InputLabel>
     <SelectMUI
       aria-label={ariaLabel}

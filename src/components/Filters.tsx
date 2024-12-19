@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { SelectChangeEvent } from '@mui/material';
+import { SelectChangeEvent, TextField } from '@mui/material';
 import Select from './common/Select';
 import strings from '../constants/strings';
 import { cuisineTypes, dietaryRestrictions } from '../constants/data';
@@ -21,12 +21,6 @@ const Filters = ({ onChange }: Filters) => {
   // NOTE: Add food allergies
   return (
     <div>
-      <label>Cuisine:</label>
-      <input
-        name='cuisine'
-        onChange={handleChange}
-        placeholder='e.g., Italian'
-      />
       <Select
         ariaLabel={strings.cuisine}
         data={cuisineTypes}
@@ -47,8 +41,20 @@ const Filters = ({ onChange }: Filters) => {
         onChange={handleChange}
         value={filters.dietary}
       />
-      <label>Max Cooking Time (minutes):</label>
-      <input name='time' type='number' onChange={handleChange} />
+      <TextField
+        id='outlined-number'
+        label='Max Cooking Time'
+        name='time'
+        // @ts-ignore TODO: Fix type
+        onChange={handleChange}
+        slotProps={{
+          inputLabel: {
+            shrink: true
+          }
+        }}
+        type='number'
+        variant='filled'
+      />
     </div>
   );
 };

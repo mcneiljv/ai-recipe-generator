@@ -28,9 +28,12 @@ const Filters = ({ onChange }: Filters) => {
         placeholder='e.g., Italian'
       />
       <Select
+        ariaLabel={strings.dietaryRestrictions}
         data={dietaryRestrictions}
         id='dietary-restriction-select'
         label={strings.dietaryRestrictions}
+        labelId='dietary-select-label'
+        name='dietary'
         onChange={handleChange}
         value={filters.dietary}
       />

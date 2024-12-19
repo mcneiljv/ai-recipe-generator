@@ -7,17 +7,27 @@ import {
 } from '@mui/material';
 
 interface Select extends Omit<SelectProps<string>, 'children'> {
+  ariaLabel: string;
   data: InputData[];
   label: string;
 }
 
-const Select = ({ data, id, label, onChange, value, ...rest }: Select) => (
+const Select = ({
+  ariaLabel,
+  data,
+  id,
+  label,
+  name,
+  onChange,
+  value,
+  ...rest
+}: Select) => (
   <FormControl variant='standard' sx={{ m: 1, width: 300 }}>
     <InputLabel id={`${id}-label`}>{label}</InputLabel>
     <SelectMUI
-      aria-label={label}
+      aria-label={ariaLabel}
       id={id}
-      name={id}
+      name={name}
       label={label}
       labelId={`${id}-label`}
       onChange={onChange}

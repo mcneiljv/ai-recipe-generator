@@ -1,8 +1,16 @@
-// TODO: Add strings to str file
+import { Typography } from '@mui/material';
+import strings from '../constants/strings';
+
 const RecipeDisplay = ({ recipe }: RecipeDisplay) => (
   <div>
-    <h2>Recipe Suggestion:</h2>
-    {recipe ? <p>{recipe}</p> : <p>No recipe generated yet.</p>}
+    <Typography variant='h3' component='h2'>
+      {strings.recipeSuggestion}
+    </Typography>
+    {recipe ? (
+      <Typography variant='body1'>{recipe}</Typography>
+    ) : (
+      <Typography variant='body1'>{strings.noRecipeGenerated}</Typography>
+    )}
   </div>
 );
 

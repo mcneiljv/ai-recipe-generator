@@ -26,7 +26,12 @@ const IngredientInput = ({ onSubmit }: IngredientInput) => {
         value={ingredients}
         variant='filled'
       />
-      <Button type='submit' variant='contained' endIcon={<RestaurantIcon />}>
+      <Button
+        endIcon={<RestaurantIcon />}
+        type='submit'
+        variant='contained'
+        sx={{ m: 1 }}
+      >
         {strings.generateRecipe}
       </Button>
     </form>

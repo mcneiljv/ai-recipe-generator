@@ -5,6 +5,8 @@ const strings = {
   generateRecipe: 'Generate Recipe',
   ingredients: 'Ingredients',
   maxCookingTime: 'Max Cooking Time (minutes)',
+  noRecipeGenerated: 'No recipe generated yet.',
+  recipeSuggestion: 'Recipe Suggestion:',
   title: 'AI Recipe Generator'
 };
 

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Typography } from '@mui/material';
 import strings from './constants/strings';
 import Filters from './components/Filters';
 import IngredientInput from './components/IngredientInput';
@@ -20,7 +21,9 @@ const App = () => {
 
   return (
     <div>
-      <h1>{strings.title}</h1>
+      <Typography variant='h2' component='h1'>
+        {strings.title}
+      </Typography>
       <IngredientInput onSubmit={handleGenerate} />
       <Filters onChange={setFilters} />
       <RecipeDisplay recipe={recipe} />

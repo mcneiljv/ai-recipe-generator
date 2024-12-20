@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Box } from '@mui/material';
 import Select from './common/Select';
 import Text from './common/Text';
 import strings from '../constants/strings';
@@ -18,7 +19,7 @@ const Filters = ({ onChange }: Filters) => {
   };
 
   return (
-    <div>
+    <Box>
       <Select
         aria-label={strings.cuisine}
         data={cuisineTypes}
@@ -40,14 +41,14 @@ const Filters = ({ onChange }: Filters) => {
         value={filters.dietary}
       />
       <Text
-        id='outlined-number'
+        id='time-number-input'
         label={strings.maxCookingTime}
         name='time'
         onChange={handleChange}
         type='number'
         variant='filled'
       />
-    </div>
+    </Box>
   );
 };
 

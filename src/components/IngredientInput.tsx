@@ -11,16 +11,23 @@ const IngredientInput = ({ onSubmit }: IngredientInput) => {
     onSubmit(ingredients.split(',').map((item) => item.trim()));
   };
 
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setIngredients(e.target.value);
+  };
+
   // TODO: Add strings to str file
   return (
     <form onSubmit={handleSubmit}>
       <Text
+        helperText='e.g. Tofu, buffalo sauce'
         id='outlined-number'
         label='Ingredients'
         maxRows={4}
         multiline
         name='time'
-        onChange={(e) => setIngredients(e.target.value)}
+        onChange={handleChange}
         type='text'
         value={ingredients}
         variant='filled'
@@ -28,7 +35,6 @@ const IngredientInput = ({ onSubmit }: IngredientInput) => {
       <Button type='submit' variant='contained' endIcon={<RestaurantIcon />}>
         Generate Recipe
       </Button>
-      {/* <button type='submit'>Generate Recipe</button> */}
     </form>
   );
 };

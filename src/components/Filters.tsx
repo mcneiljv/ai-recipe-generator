@@ -21,7 +21,7 @@ const Filters = ({ onChange }: Filters) => {
   return (
     <div>
       <Select
-        ariaLabel={strings.cuisine}
+        aria-label={strings.cuisine}
         data={cuisineTypes}
         id='cuisine-restriction-select'
         label={strings.cuisine}
@@ -32,7 +32,7 @@ const Filters = ({ onChange }: Filters) => {
         value={filters.cuisine}
       />
       <Select
-        ariaLabel={strings.dietaryRestrictions}
+        aria-label={strings.dietaryRestrictions}
         data={dietaryRestrictions}
         id='dietary-restriction-select'
         label={strings.dietaryRestrictions}

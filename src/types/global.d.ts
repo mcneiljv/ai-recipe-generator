@@ -22,3 +22,7 @@ interface RecipeFilters {
   dietary: string;
   time: string;
 }
+
+type UnifiedChangeEvent =
+  | SelectChangeEvent<string>
+  | ChangeEvent<HTMLInputElement | HTMLTextAreaElement>;

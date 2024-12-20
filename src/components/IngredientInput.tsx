@@ -11,12 +11,6 @@ const IngredientInput = ({ onSubmit }: IngredientInput) => {
     onSubmit(ingredients.split(',').map((item) => item.trim()));
   };
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setIngredients(e.target.value);
-  };
-
   // TODO: Add strings to str file
   return (
     <form onSubmit={handleSubmit}>
@@ -27,7 +21,7 @@ const IngredientInput = ({ onSubmit }: IngredientInput) => {
         maxRows={4}
         multiline
         name='time'
-        onChange={handleChange}
+        onChange={(e) => setIngredients(e.target.value)}
         type='text'
         value={ingredients}
         variant='filled'

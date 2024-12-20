@@ -1,16 +1,19 @@
+import { FC } from 'react';
 import {
-  BaseSelectProps,
   FormControl,
   InputLabel,
   MenuItem,
-  Select as SelectMUI
+  Select as SelectMUI,
+  SelectProps
 } from '@mui/material';
 
-interface Select extends BaseSelectProps {
+type Select = SelectProps<string> & {
   data: InputData[];
-}
+  id: string;
+  label: string;
+};
 
-const Select = ({ data, id, label, ...rest }: Select) => (
+const Select: FC<Select> = ({ data, id, label, ...rest }) => (
   <FormControl variant='filled' sx={{ m: 1, width: 300 }}>
     <InputLabel id={`${id}-label`}>{label}</InputLabel>
     <SelectMUI {...rest}>

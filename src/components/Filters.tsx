@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { SelectChangeEvent } from '@mui/material';
 import Select from './common/Select';
 import Text from './common/Text';
 import strings from '../constants/strings';
@@ -12,7 +11,7 @@ const Filters = ({ onChange }: Filters) => {
     time: ''
   });
 
-  const handleChange = (e: SelectChangeEvent<string>) => {
+  const handleChange = (e: UnifiedChangeEvent) => {
     const { name, value } = e.target;
     setFilters({ ...filters, [name]: value });
     onChange({ ...filters, [name]: value });
@@ -27,7 +26,6 @@ const Filters = ({ onChange }: Filters) => {
         label={strings.cuisine}
         labelId='cuisine-select-label'
         name='cuisine'
-        // @ts-ignore TODO: Fix type
         onChange={handleChange}
         value={filters.cuisine}
       />
@@ -38,16 +36,13 @@ const Filters = ({ onChange }: Filters) => {
         label={strings.dietaryRestrictions}
         labelId='dietary-select-label'
         name='dietary'
-        // @ts-ignore TODO: Fix type
         onChange={handleChange}
         value={filters.dietary}
       />
-      {/* TODO:Add helper text that says minutes */}
       <Text
         id='outlined-number'
-        label='Max Cooking Time'
+        label={strings.maxCookingTime}
         name='time'
-        // @ts-ignore TODO: Fix type
         onChange={handleChange}
         type='number'
         variant='filled'

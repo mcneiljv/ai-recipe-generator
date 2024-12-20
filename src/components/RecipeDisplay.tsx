@@ -3,7 +3,7 @@ import strings from '../constants/strings';
 
 const RecipeDisplay = ({ recipe }: RecipeDisplay) => (
   <div>
-    <Typography variant='h3' component='h2'>
+    <Typography variant='h4' component='h2'>
       {strings.recipeSuggestion}
     </Typography>
     {recipe ? (
